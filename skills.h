@@ -149,7 +149,9 @@ void print_skill(Skill* skill) {
 void print_skills(SkillList* skills) {
     SkillListNode* current = skills->head;
     while (current != NULL) {
-        print_skill(current->value);
+        if (current->value->level > 0) {
+            print_skill(current->value);
+        }
         current = current->next;
     }
 }
