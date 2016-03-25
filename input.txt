@@ -1,0 +1,45 @@
+1
+16
+Double Attack 10
+Increase Dodge 10
+Steal 10
+Envenom 10
+Hiding 10
+Detoxify 1
+Right-Hand Mastery 5
+Katar Mastery 10
+Left-Hand Mastery 5
+Cloaking 10
+Sonic Blow 10
+Grimtooth 5
+Enchant Poison 10
+Poison React 10
+Venom Dust 10
+Venom Splasher 10
+12
+Hiding | Steal 5
+Detoxify | Envenom 3
+Left-Hand Mastery | Right-Hand Mastery 2
+Cloaking | Hiding 2
+Sonic Blow | Katar Mastery 4
+Grimtooth | Cloaking 2
+Grimtooth | Sonic Blow 5 
+Enchant Poison | Envenom 1
+Poison React | Enchant Poison 3
+Venom Dust | Enchant Poison 5
+Venom Splasher | Poison React 5
+Venom Splasher | Venom Dust 5
+12
+Grimtooth 5
+Sonic Blow 10
+Katar Mastery 10
+Cloaking 10
+Poison React 4
+Enchant Poison 10
+Detoxify 1
+Increase Dodge 10
+Hiding 3
+Steal 5
+Double Attack 10
+Envenom 10
+
