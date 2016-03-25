@@ -68,6 +68,9 @@ void solve_case(FILE* file_source) {
     print_skills(allocations);
 
     printf("\n");
+
+    free(allocations);
+    free(skills);
 }
 
 int main() {
