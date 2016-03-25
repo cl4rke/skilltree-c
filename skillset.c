@@ -52,6 +52,12 @@ void solve_case(FILE* file_source) {
 
     read_skill_dependencies(file_source, skills);
 
+    if (skills_contain_circular_dependencies(skills)) {
+        printf("Not possible\n"); 
+
+        return;
+    }
+
     int points_used = read_skill_targets(file_source, skills);
 
     printf("%d point/s\n", points_used);

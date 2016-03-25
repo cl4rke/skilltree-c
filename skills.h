@@ -156,6 +156,36 @@ void print_skills(SkillList* skills) {
     }
 }
 
+boolean skill_contains_circular_dependencies(Skill* skill, int depth, Skill* root_skill) {
+    if (depth > 0 && skill == root_skill) {
+        return true;
+    }
+
+    SkillDependencyList* dependencies = skill->dependencies;
+    SkillDependencyListNode* dependency = dependencies->head;
+
+    while (dependency != NULL) {
+        if (skill_contains_circular_dependencies(dependency->skill, depth+1, root_skill)) {
+            return true;
+        }
+        dependency = dependency->next;
+    }
+
+    return false;
+}
+
+boolean skills_contain_circular_dependencies(SkillList* skills) {
+    SkillListNode* current = skills->head;
+    while (current != NULL) {
+        Skill* skill = current->value;
+        if (skill_contains_circular_dependencies(skill, 0, skill)) {
+            return true;
+        }
+        current = current->next;
+    }
+    return false;
+}
+
 boolean unlocked(Skill* skill) {
     SkillDependencyListNode* dependency = skill->dependencies->head;
 
