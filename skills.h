@@ -81,11 +81,11 @@ SkillDependencyListNode* create_skill_dependency_node(Skill* skill, int required
     return node;
 }
 
-Skill* create_skill(string name, int max_level) {
+Skill* create_skill(string name, int level, int max_level) {
     Skill* skill = malloc(sizeof(Skill));
 
     skill->name = name;
-    skill->level = 0;
+    skill->level = level;
     skill->max_level = max_level;
     skill->dependencies = create_skill_dependency_list();
 
@@ -199,7 +199,7 @@ boolean unlocked(Skill* skill) {
     return true;
 }
 
-int allocate_points(Skill* skill, int target_level) {
+int allocate_points(Skill* skill, int target_level, SkillList* allocations) {
     int points_used = 0;
 
     SkillDependencyList* dependencies = skill->dependencies;
@@ -208,7 +208,7 @@ int allocate_points(Skill* skill, int target_level) {
         SkillDependencyListNode* dependency = dependencies->head;
 
         while (dependency != NULL) {
-            points_used += allocate_points(dependency->skill, dependency->required_level);
+            points_used += allocate_points(dependency->skill, dependency->required_level, allocations);
             dependency = dependency->next;
         }
     }
@@ -217,7 +217,7 @@ int allocate_points(Skill* skill, int target_level) {
         points_used += target_level - skill->level;
         skill->level = target_level;
 
-        printf("- %s %d\n", skill->name, skill->level);
+        add(allocations, create_skill(skill->name, skill->level, 0));
     }
 
     return points_used;

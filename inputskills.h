@@ -7,6 +7,6 @@ Skill* read_skill_details(FILE* source) {
     string name = read_string(source);
     int level = read_int(source);
 
-    return create_skill(name, level);
+    return create_skill(name, 0, level);
 }
 

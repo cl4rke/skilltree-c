@@ -31,7 +31,7 @@ void read_skill_dependencies(FILE* file_source, SkillList* skills) {
     }
 }
 
-int read_skill_targets(FILE* file_source, SkillList* skills) {
+int read_skill_targets(FILE* file_source, SkillList* skills, SkillList* allocations) {
     int points_used = 0;
 
     int line_count = read_int(file_source);
@@ -40,7 +40,8 @@ int read_skill_targets(FILE* file_source, SkillList* skills) {
         Skill* target = read_skill_details(file_source);
         points_used += allocate_points(
                 find_skill(skills, target->name),
-                target->max_level
+                target->max_level,
+                allocations
         );
     }
 
@@ -58,9 +59,15 @@ void solve_case(FILE* file_source) {
         return;
     }
 
-    int points_used = read_skill_targets(file_source, skills);
+    SkillList* allocations = create_skill_list();
 
-    printf("= %d point/s\n\n", points_used);
+    int points_used = read_skill_targets(file_source, skills, allocations);
+
+    printf("%d point/s\n", points_used);
+
+    print_skills(allocations);
+
+    printf("\n");
 }
 
 int main() {
@@ -69,7 +76,7 @@ int main() {
     int case_count = read_int(file_source);
 
     for (int i = 0; i < case_count; i++) {
-        printf("Case #%d:\n", i+1);
+        printf("Case #%d: ", i+1);
         solve_case(file_source);
     }
 
