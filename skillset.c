@@ -60,9 +60,7 @@ void solve_case(FILE* file_source) {
 
     int points_used = read_skill_targets(file_source, skills);
 
-    printf("%d point/s\n", points_used);
-
-    print_skills(skills);
+    printf("= %d point/s\n\n", points_used);
 }
 
 int main() {
@@ -71,7 +69,7 @@ int main() {
     int case_count = read_int(file_source);
 
     for (int i = 0; i < case_count; i++) {
-        printf("Case #%d: ", i+1);
+        printf("Case #%d:\n", i+1);
         solve_case(file_source);
     }
 

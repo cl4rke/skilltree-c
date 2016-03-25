@@ -216,6 +216,8 @@ int allocate_points(Skill* skill, int target_level) {
     if (skill->level < target_level) {
         points_used += target_level - skill->level;
         skill->level = target_level;
+
+        printf("- %s %d\n", skill->name, skill->level);
     }
 
     return points_used;
