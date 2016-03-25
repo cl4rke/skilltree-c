@@ -1,4 +1,4 @@
-1
+4
 16
 Double Attack 10
 Increase Dodge 10
@@ -42,4 +42,69 @@ Hiding 3
 Steal 5
 Double Attack 10
 Envenom 10
-
+10
+Fire Bolt 20
+Warmth 20
+Inferno 20
+Blaze 20
+Fireball 20
+Firewall 20
+Enchant 20
+Meteor 20
+Fire Mastery 20
+Hydra 20
+16
+Blaze | Inferno 1
+Fireball | Fire Bolt 1
+Firewall | Inferno 1
+Firewall | Blaze 1
+Enchant | Fire Bolt 1
+Enchant | Warmth 1
+Enchant | Fireball 1
+Meteor | Fire Bolt 1
+Meteor | Inferno 1
+Meteor | Blaze 1
+Meteor | Fireball 1
+Meteor | Firewall 1
+Hydra | Fire Bolt 1
+Hydra | Warmth 1
+Hydra | Fireball 1
+Hydra | Enchant 1
+2
+Hydra 19
+Fire Mastery 11
+8
+Elementalist 8
+Sniper 8
+Archer 8
+White Mage 9
+Summoner 8
+Assassin 8
+Red Mage 8
+Fencer 8
+8
+Red Mage | Fencer 1
+Summoner | White Mage 2
+Elementalist | Fencer 1
+Summoner | Elementalist 2
+Assassin | Elementalist 2
+Elementalist | White Mage 1
+Assassin | Sniper 1
+Sniper | Archer 2
+3
+Assassin 2
+Sniper 6
+White Mage 9
+5
+Animal Empathy 3
+Bluff 3
+Diplomacy 3
+Intimidate 3
+Wilderness Lore 3
+3
+Bluff | Diplomacy 2
+Diplomacy | Intimidate 2
+Intimidate | Bluff 2
+2
+Animal Empathy 2
+Bluff 3
